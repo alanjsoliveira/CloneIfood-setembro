@@ -147,6 +147,25 @@
         </form>
     </div>
 
+    <!--Formulário para celular-->
+    <div id="cellPhoneForm" style="display: none;">
+        <input type="tell" id="cellPhoneInput" placeholder="Digite seu Número de Celular">
+        <button type="button" onclick="enviarCelular()">Enviar</button>
+
+    <!-- Formulário para e-mail -->
+    <div id="emailForm" style="display: none;">
+        <input type="email" id="emailInput" placeholder="Digite seu e-mail">
+        <button type="button" onclick="enviarEmail()">Enviar</button>
+    </div>
+
+    <!-- Formulário para WhatsApp -->
+    <div id="whatsappForm" style="display: none;">
+        <input type="tel" id="whatsappInput" placeholder="Digite seu número do WhatsApp">
+        <button type="button" onclick="enviarWhatsApp()">Enviar</button>
+    </div>
+</form>
+</div>
+
     <!--Lógica para formulários de cadastro com celular e e-mail -->
     <script>
         document.getElementById("cellPhoneButton").addEventListener("click", function() {
