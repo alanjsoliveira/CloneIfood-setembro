@@ -1,14 +1,14 @@
 from flask import Flask,render_template,request, jsonify, redirect, url_for
 import psycopg2 as pg
 
-conn = pg.connect(
+'''conn = pg.connect(
     host="localhost",
     user="postgres",
     password="Ml304210?",
     port="5432",
     dbname="Ifood.bd"
 )
-
+'''
 app = Flask(__name__)
 
 @app.route("/", endpoint='home')

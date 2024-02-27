@@ -1,50 +1,343 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Delivery de Comida e Mercado - iFood</title>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="/static/css/teste_pagina2.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery de Comida e Mercado - iFood</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
 </head>
 <body>
-    <div class="container">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 10 auto;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero {
+            height: 80%;
+            max-height: 520px;
+            background: #f5f3f4;
+            position: relative;
+        }
+
+        .header {
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 25%;
+        }
+
+        .header ul {
+            display: flex;
+            align-items: center;
+        }
+
+        .header ul li {
+            list-style: none;
+            margin: 0 35px;
+            color: #3e3e3e;
+        }
+
+        .header ul li a {
+            text-decoration: none;
+            font-size:  16px;
+            color: #000000;
+        }
+
+        .header ul li a:hover {
+            color: #ea1d2c;
+        }
+
+        .header ul li:last-child {
+            background: #fff;
+            padding: 15px 45px;
+            margin: 0 0 0 25px;
+            border-radius: 5px;
+            border: 1px solid #dcdcdc;
+            color: #ea1d2c;
+            font-weight: 500;
+        }
+
+        .header ul li:last-child:hover {
+            background: #ea1d2c;
+            color: #fff;
+        }
+
+        .bg {
+            display: flex;
+            height: 100%;
+            position: relative;
+        }
+
+        .left img,
+        .right img,
+        .left .svg,
+        .right .svg {
+            position: absolute;
+        }
+
+        .left img {
+            width: 400px;
+            top: 0;
+            left: 0;
+        }
+
+        .left .svg {
+            width: 160px;
+            height: 180px;
+            left: 71px;
+            top: 257px;
+        }
+
+        .right img {
+            width: 240px;
+            top: 204px;
+            right: 0;
+        }
+
+        .right .svg {
+            width: 198px;
+            height: 172px;
+            right: 138px;
+            top: 106px;
+            transform: rotate(-8deg);
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 30px;
+        }
+
+        .content .logo {
+            width: 120px;
+        }
+
+        .content h2 {
+            font-size: 2.5rem;
+            color: #3e3e3e;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+
+        .content h2 span {
+            color: #ea1d2c;
+        }
+
+        .content p {
+            color: #000000;
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        .form {
+            width: 100%;
+            max-width: 780px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .form .search {
+            width: 100%;
+            max-width: 650px;
+            background: #fff;
+            height: 50px;
+            border-radius: 4px;
+            margin-right: 20px;
+            display: flex;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .form .search img {
+            width: 26px;
+            margin: 0 20px;
+        }
+
+        .form .search input {
+            flex: 1;
+            background: transparent;
+            border: 0;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        .form .search input::placeholder {
+            font-weight: 400;
+            color: #a6a6a6;
+        }
+
+        .form button {
+            width: 210px;
+            background: #ea1d2c;
+            color: #fff;
+            font-weight: 400;
+            border: 0;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form button:hover {
+            background: #c2121f;
+        }
+
+        .tags {
+            margin: 30px 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .tags span {
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: #818181;
+            border: 1px solid #ccc;
+            padding: 4px;
+            border-radius: 3px;
+            margin: 6px;
+        }
+
+        .banner {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .banner img {
+            width: 100%;
+            max-width: 390px;
+            margin: 0 10px;
+            transition: 0.2s;
+        }
+
+        .banner img:hover {
+            transform: scale(1.02);
+        }
+
+        .footer {
+            margin: 20px;
+            border-top: 1px solid #dcdcdc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .footer img {
+            width: 50px;
+        }
+
+        .footer span {
+            font-size: 0.8125rem;
+            color: #818181;
+            margin: 0 20px;
+        }
+
+        .banner-button {
+            border: none;
+            background: none;
+            padding: 0;
+            cursor: pointer;
+        }
+
+.banner-button .banner-image {
+    border: 2px solid #ccc; /* Adicione a borda desejada */
+    border-radius: 5px; /* Opcional: adicione bordas arredondadas */
+    width: 150px; /* Defina a largura desejada */
+    height: auto; /* Mantenha a proporção da imagem */
+}
+
+/* Estilo para o hover */
+.banner-button:hover .banner-image {
+    transform: scale(1.1); /* Aumenta o tamanho da imagem quando o botão é hover */
+    border-color: #999; /* Mude a cor da borda quando o botão é hover, se desejar */
+}
+
+/* Estilo para a seção de título */
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Estilo para a div de banner */
+.banner {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* Estilo para as imagens do restaurante */
+.restaurant-logo {
+    max-width: 64px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0 10px; /* Adiciona margem entre as imagens */
+    border: 2px solid #ccc; /* Adiciona uma borda sólida de 2px com cor cinza */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+}
+
+</style>
+
+	<div class="container">
         <div class="hero">
             <!-- HEADER -->
             <div class="header">
                 <ul>
+                    <li style="border: black 2px; min-width: 9%;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1004 530.58"><title>ifood-43</title><path d="M-4,529.31H72.41l42.46-211.2H38.45ZM42.66,292.92h76.73L132,229.73H55.3Zm59.47,295.82h76.42l46.69-228.18h57.31L291,318.11H234.79l2.13-9.55c3.18-18,9.55-38.21,38.2-38.21,17,0,32.91,1.06,48.82,8.49l8.5-44.57a167.8,167.8,0,0,0-55.19-9.56c-61.56,0-104,36.09-119.93,93.4H130.79l-8.49,42.45h26.53Z" transform="translate(4 -224.71)" fill="#ea1d2c"/><path d="M344.11,533.56c90.21,0,152.83-81.73,152.83-148.59,0-49.88-45.64-71.11-90.21-71.11C308,313.86,253.9,402,253.9,462.45c0,49.88,46.7,71.11,90.21,71.11m242,0c90.21,0,152.83-81.73,152.83-148.59,0-49.88-46.7-71.11-91.28-71.11-98.7,0-152.82,88.09-152.82,148.59,0,49.88,47.76,71.11,91.27,71.11m277-4.25h75.35L1000,229H923.59l-18.05,89.15-31.84-3.18c-74.29,0-142.21,95.51-142.21,163.44,0,27.59,18,55.19,48.82,55.19,43.51,0,74.29-21.23,87-42.46h4.24ZM627.48,687.45a295,295,0,0,1-212.26,66.86c-100.83-6.37-173-83.85-185.73-165.57h4.24c23.35,51,79.6,98.71,148.59,106.13,70,8.49,153.89-23.34,199.52-66.86L530.9,588.74H684.79l-34,163.45-22.29-63.68Z" transform="translate(4 -224.71)" fill="#ea1d2c"/></svg>
+                        </li>
                     <li><a href="">Entregador</a></li>
-                    <li><a href="">Restaurante</a></li>
+                    <li><a href="">Restaurante e Mercado</a></li>
                     <li><a href="">Carreiras</a></li>
-                    <li><a href="">iFood Empresas</a></li>
+                    <li><a href="">iFood Card</a></li>
+                    <li><a href="">criar conta</a></li>
                     <li><a href="/cadastro">Entrar</a></li>
                 </ul>
             </div>
-
-            <!-- BG -->
-            <div class="bg">
-                <div class="left">
-                    <img src="images/dish-left.png" alt="" />
-                    <img class="svg" src="images/left.svg" alt="" />
-                </div>
-                <div class="right">
-                    <img class="svg" src="images/right.svg" alt="" />
-                    <img src="images/dish-right.png" alt="" />
-                </div>
-                <div class="content">
-                    <img src="images/logo.svg" alt="" class="logo" />
-                    <h2>Nunca foi tão facil pedir <span>lanche</span></h2>
-                    <p>Descubra restaurantes perto de você</p>
-                    <div class="form">
-                        <div class="search">
-                            <img src="images/search.svg" alt="" />
-                            <input type="text" placeholder="Buscar endereço e número" />
-                        </div>
-                        <button>Buscaar</button>
-                    </div>
+<!-- BG -->
+<div class="bg">
+    <div class="left">
+        <img src="images/dish-left.png" alt="" />
+        <img class="svg" src="images/left.svg" alt="" />
+    </div>
+    <div class="right">
+        <img class="svg" src="images/right.svg" alt="" />
+        <img src="images/dish-right.png" alt="" />
+    </div>
+    <div class="content">
+        <img src="images/logo.svg" alt="" class="logo" />
+        <h2>Faça mercado no ifood <span></span></h2>
+        <p>Entregamos tudo o que precisa na porta da sua casa, de hortifruti a itens de limpeza</p>
+        <div class="form" style="display: flex; align-items: center;">
+            <div class="search" style="flex: 1; margin-right: 10px;">
+                <img src="images/search.svg" alt="" />
+                <input type="text" placeholder="Em qual endereço você está?" style="width: 100%;" />
+            </div>
+            <button style="padding: 10px 20px; background-color: #ea1d2c; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Ver mercados próximos	</button>
+        </div>
+    </div>
+</div>
+            </div>
                     <div class="tags">
                         <span>Frios</span>
                         <span>Laticínios</span>
@@ -52,7 +345,7 @@
                         <span>Bebidas</span>
                         <span>Doces</span>
                         <span>Massas frescas</span>
-                        <span>limpeza</span><br>
+                        <span>limpeza</span></br>
                         <span>Padaria</span>
                         <span>Higiene</span>
                         <span>Congelados</span>
@@ -64,137 +357,96 @@
             </div>
         </div>
 
-
-
-
-
-
-
-
-
-
-
-        <div class="landing-v2-multi-categories__big-category">
-            <a class="landing-v2-multi-categories-big-link landing-v2-multi-categories-big-link--restaurant" href="/restaurantes">
-                <div class="landing-v2-multi-categories-big-link__container">
-                    <figure class="landing-v2-multi-categories-big-link__image-container">
-                        <img class="landing-v2-multi-categories-big-link__image landing-v2-multi-categories-big-link__image--restaurant" src="https://static.ifood-static.com.br/image/upload/f_auto/webapp/landingV2/restaurant.png" alt="Ver opções">
-                    </figure>
-                    <div class="landing-v2-multi-categories-big-link__content">
-                        <span class="landing-v2-multi-categories-big-link__text">Ver opções</span>
-                        <span class="icon-marmita icon-marmita--arrow-right-thin landing-v2-multi-categories-big-link__icon">
-                            <!-- Conteúdo do ícone SVG para uma seta para a direita -->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </span>
-                    </div>
-                </div>
-            </a>
-        </div>
-        
-
-        <a class="landing-v2-multi-categories-big-link landing-v2-multi-categories-big-link--market" href="/mercados">
-            <div class="landing-v2-multi-categories-big-link__container">
-                <figure class="landing-v2-multi-categories-big-link__image-container">
-                    <img class="landing-v2-multi-categories-big-link__image landing-v2-multi-categories-big-link__image--market" src="https://static.ifood-static.com.br/image/upload/f_auto/webapp/landingV2/market.png" alt="Buscar lojas">
-                </figure>
-                <div class="landing-v2-multi-categories-big-link__content">
-                    <p class="landing-v2-multi-categories-big-link__title">Mercado</p>
-                    <div class="landing-v2-multi-categories-big-link__link landing-v2-multi-categories-big-link__link--market">
-                        <span>Buscar lojas</span>
-                        <span class="icon-marmita icon-marmita--arrow-right-thin landing-v2-multi-categories-big-link__icon">
-                            <!-- Conteúdo do ícone SVG para uma seta para a direita -->
-                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-    
-<img class="landing-v2-multi-categories-small-link__image landing-v2-multi-categories-small-link__image--drinks" src="https://static.ifood-static.com.br/image/upload/f_auto/webapp/landingV2/drinks.png" alt="Bebidas">
-
-<img class="landing-v2-multi-categories-small-link__image landing-v2-multi-categories-small-link__image--pharmacy" src="https://static.ifood-static.com.br/image/upload/f_auto/webapp/landingV2/pharmacy.png" alt="Farmácia">
-
-<img class="landing-v2-multi-categories-small-link__image landing-v2-multi-categories-small-link__image--petshop" src="https://static.ifood-static.com.br/image/upload/f_auto/webapp/landingV2/petshop.png" alt="Pet shop">
-
-<h2 class="landing-v2-merchants__title">Os melhores restaurantes</h2>
-
+<!-- Banners -->
 <div class="banner">
-    <img alt="Mcdonald's" src="https://static.ifood-static.com.br/image/upload/t_thumbnail/logosgde/Logo%20McDonald_MCDON_DRIV15.jpg?imwidth=64" decoding="async" data-nimg="intrinsic" class="landing-v2-merchant__logo" style="max-width: 64px; width: 100%; height: auto; object-fit: cover; display: block; margin: 0 auto;">
-    <img alt="Coco Bambu"  src="https://static.ifood-static.com.br/image/upload/t_thumbnail/logosgde/201910292243_94aaf166-84cc-4ebf-a35d-d223be34d01f.png?imwidth=128" decoding="async" data-nimg="intrinsic" class="landing-v2-merchant__logo" style="max-width: 64px; width: 100%; height: auto; object-fit: cover; display: block; margin: 0 auto;">
+    <button class="banner-button" onclick="location.href='https://seu-link-aqui';">
+        <img class="banner-image" src="https://static.ifood-static.com.br/image/upload/f_auto/webapp/landingV2/restaurant.png" alt="Ver opções">
+    </button>
+    <button class="banner-button" onclick="location.href='https://seu-link-aqui';">
+        <img class="banner-image" src="https://static.ifood-static.com.br/image/upload/f_auto/webapp/landingV2/market.png" alt="Buscar lojas">
+    </button>
 </div>
 
-
-
-
-
 <div class="banner">
+    <button class="banner-button" onclick="location.href='https://seu-link-aqui';">
+        <img class="banner-image" src="https://static.ifood-static.com.br/image/upload/f_auto/webapp/landingV2/drinks.png" alt="Bebidas">
+    </button>
+    <button class="banner-button" onclick="location.href='https://seu-link-aqui';">
+        <img class="banner-image" src="https://static.ifood-static.com.br/image/upload/f_auto/webapp/landingV2/pharmacy.png" alt="Farmácia">
+    </button>
+    <button class="banner-button" onclick="location.href='https://seu-link-aqui';">
+        <img class="banner-image" src="https://static.ifood-static.com.br/image/upload/f_auto/webapp/landingV2/petshop.png" alt="Pet shop">
+    </button>
+</div>
+
+ <!-- Melhores restaurantes -->
+<h2 class="section-title">Os melhores restaurantes</h2>
+<div class="banner">
+    <img alt="Mcdonald's" src="https://static.ifood-static.com.br/image/upload/t_thumbnail/logosgde/Logo%20McDonald_MCDON_DRIV15.jpg?imwidth=64" class="restaurant-logo">
+    <img alt="Coco Bambu" src="https://static.ifood-static.com.br/image/upload/t_thumbnail/logosgde/201910292243_94aaf166-84cc-4ebf-a35d-d223be34d01f.png?imwidth=128" class="restaurant-logo">
+</div>
+
+        <!-- Destaques -->	
+        <div class="banner">
             <img src="https://static.ifood-static.com.br/image/upload/t_high,q_100/webapp/landing/landing-banner-1.png" alt="Almoço a partir de 10 reais" class="highlights-carousel__image"/>
             <img src="https://static.ifood-static.com.br/image/upload/t_high,q_100/webapp/landing/landing-banner-2.png" alt="Pratos com até 70%" class="highlights-carousel__image">
             <img src="https://static.ifood-static.com.br/image/upload/t_high,q_100/webapp/landing/landing-banner-3.png" alt="Super restaurantes" class="highlights-carousel__image">
         </div>
 
-
-<h2 class="landing-v2-merchants__title">Os melhores mercados</h2>
+        <!-- Melhores mercados -->
+        <h3 class="section-title">Os melhores mercados</h3>
 <div class="banner">
-    <img src="https://static.ifood-static.com.br/image/upload/t_high,q_100/webapp/landing/landing-banner-1.png" alt="Almoço a partir de 10 reais" class="highlights-carousel__image"/>
+    <img alt="Mcdonald's" src="https://static.ifood-static.com.br/image/upload/t_thumbnail/logosgde/Logo%20McDonald_MCDON_DRIV15.jpg?imwidth=64" class="restaurant-logo">
+    <img alt="Coco Bambu" src="https://static.ifood-static.com.br/image/upload/t_thumbnail/logosgde/201910292243_94aaf166-84cc-4ebf-a35d-d223be34d01f.png?imwidth=128" class="restaurant-logo">
+</div>
+        <div class="banner">
+            <img src="https://static.ifood-static.com.br/image/upload/t_high,q_100/webapp/landing/landing-banner-1.png" alt="Almoço a partir de 10 reais" class="highlights-carousel__image"/>
             <img src="https://static.ifood-static.com.br/image/upload/t_high,q_100/webapp/landing/landing-banner-2.png" alt="Pratos com até 70%" class="highlights-carousel__image">
             <img src="https://static.ifood-static.com.br/image/upload/t_high,q_100/webapp/landing/landing-banner-3.png" alt="Super restaurantes" class="highlights-carousel__image">
+        </div>
+
+		<div style="display: flex; justify-content: space-around; padding: 20px;">
+			<!-- Primeira seção -->
+			<div style="display: flex; align-items: center;">
+				<img src="img/imageifood.png" alt="Imagem" style="max-width: 100%; height: auto; flex-shrink: 0; margin-right: 20px;">
+				<div>
+					<p style="font-size: 18px; margin-bottom: 20px;">Confira as últimas novidades no iFood!</p>
+					<a href="#" style="display: inline-block; padding: 10px 20px; background-color: #ff5b4f; color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold;">Saiba mais</a>
+				</div>
+			</div>
+			
+			<!-- Segunda seção -->
+			<div style="display: flex; align-items: center;">
+				<img src="img/imageifood.png" alt="Imagem" style="max-width: 100%; height: auto; flex-shrink: 0; margin-right: 20px;">
+				<div>
+					<p style="font-size: 18px; margin-bottom: 20px;">Confira as últimas novidades no iFood!</p>
+					<a href="#" style="display: inline-block; padding: 10px 20px; background-color: #ff5b4f; color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold;">Saiba mais</a>
+				</div>
+			</div>
+		</div>
+		
+        <!-- FoodLover -->
+        <div style="display: flex; align-items: center; justify-content: center; padding: 20px;">
+            <div style="flex: 1;">
+                <p style="font-size: 18px; margin-bottom: 10px;">Você tem fome do quê?</p>
+                <p style="font-size: 18px; margin-bottom: 10px;">Descubra como é ser um FoodLover e faça parte da nossa revolução!</p>
+                <a href="#" style="display: inline-block; padding: 10px 20px; background-color: #ff5b4f; color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold;">Saiba mais</a>
+            </div>
+            <div style="flex: 1;">
+                <img src="food-lover-banner.png" alt="Imagem" style="max-width: 100%; height: auto;">
+            </div>
+        </div>
+
+       <!-- Benefícios iFood -->
+<div style="text-align: center; padding: 10px;">
+    <img src="ifood-benefits-mobile.png" alt="Imagem" style="width: 100%; height: auto;">
 </div>
 
-
-<div style="display: flex; justify-content: space-around; padding: 20px;">
-
-    <!-- Primeira seção -->
-    <div style="text-align: center;">
-        <img src="img/imageifood.png" alt="Imagem" style="max-width: 100%; height: auto;">
-        <p style="font-size: 18px; margin-top: 20px;">Confira as últimas novidades no iFood!</p>
-        <a href="#" style="display: inline-block; padding: 10px 20px; background-color: #ff5b4f; color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold;">Saiba mais</a>
-    </div>
-
-    <!-- Segunda seção -->
-    <div style="text-align: center;">
-        <img src="img/imageifood.png" alt="Imagem" style="max-width: 100%; height: auto;">
-        <p style="font-size: 18px; margin-top: 20px;">Confira as últimas novidades no iFood!</p>
-        <a href="#" style="display: inline-block; padding: 10px 20px; background-color: #ff5b4f; color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold;">Saiba mais</a>
-    </div>
-
-</div>
-
-
-<div style="display: flex; align-items: center; justify-content: center; padding: 20px;">
-    <div style="flex: 1;">
-        <p style="font-size: 18px; margin-bottom: 10px;">Você tem fome do quê?</p>
-        <p style="font-size: 18px; margin-bottom: 10px;">Descubra como é ser um FoodLover e faça parte da nossa revolução!</p>
-        <a href="#" style="display: inline-block; padding: 10px 20px; background-color: #ff5b4f; color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold;">Saiba mais</a>
-    </div>
-    <div style="flex: 1;">
-        <img src="food-lover-banner.png" alt="Imagem" style="max-width: 100%; height: auto;">
-    </div>
-</div>
-
-<div style="text-align: center; padding: 20px;">
-<img src="ifood-benefits-mobile.png" alt="Imagem" style="max-width: 100%; height: auto;">
-</div>
-</main>
-
-
-
-
+        <!-- Footer -->
         <div class="footer">
-            <img src="images/logofooter.svg" alt="" />
-            <span>© Copyright 2020 - iFood <br />Todos os direitos reservados</span>
+            <img src="images/logofooter.svg" alt="">
+            <span>© Copyright 2020 - iFood <br>Todos os direitos reservados</span>
         </div>
     </div>
 </body>
 </html>
-
-
-
-
-
-
