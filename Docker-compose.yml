@@ -1,0 +1,38 @@
+version: '3.8'
+
+networks:
+  ifood-network:
+    external: true
+
+services:
+  web:
+    build: .
+    ports:
+      - "5001:5001"
+    environment:
+      - DATABASE_URL=postgresql://user:password@db:5433/database
+    volumes:
+      - .:/Projeto_Ifood
+    depends_on:
+      - db
+    networks:
+      - ifood-network
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=database
+    networks:
+      - ifood-network
+  pgadmin:
+    image: dpage/pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=mth123922@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=postgres
+    ports:
+      - "8081:81"
+    depends_on:
+      - db
+    networks:
+      - ifood-network
