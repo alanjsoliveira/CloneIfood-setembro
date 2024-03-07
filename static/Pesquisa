@@ -1,0 +1,48 @@
+const myList = [
+    { name: 'Inicio', category: 'inicio' },
+    { name: 'Pizza Palace', category: 'restaurantes' },
+    { name: 'Burger House', category: 'restaurantes' },
+    { name: 'Fresh Market', category: 'mercados' },
+    { name: 'Coca-Cola', category: 'bebidas' },
+    { name: 'Drugstore', category: 'farmacia' },
+    { name: 'Pet Store', category: 'pets' },
+    { name: 'Shopping Plaza', category: 'shopping' },
+  ];
+  
+  function search(query) {
+    const queryLowerCase = query.toLowerCase();
+    const filteredByQuery = myList.filter(item => item.name.toLowerCase().includes(queryLowerCase));
+    const filteredByCategory = queryLowerCase.startsWith('categoria:')
+      ? myList.filter(item => item.category.toLowerCase() === queryLowerCase.slice('categoria:'.length))
+      : [];
+    return filteredByQuery.concat(filteredByCategory);
+  }
+  
+  // Example usage
+  const searchResults = search('pizza');
+  console.log(searchResults);
+  const searchResultsByCategory = search('categoria:restaurantes');
+  console.log(searchResultsByCategory);
+
+
+
+
+
+  /2/
+
+  // cada um com uma propriedade "name"
+const foods = [
+    { name: 'Pizza' },
+    { name: 'Burger' },
+    { name: 'Sushi' },
+    // ... more food objects
+  ];
+  
+  // função de pesquisa simples que usa uma string de consulta como entrada
+  // e retorna um array de objetos alimentares correspondentes
+  function searchFoods(query) {
+    return foods.filter(food => food.name.toLowerCase().includes(query.toLowerCase()));
+  }
+  
+  // Exemplo de uso:
+  const results = searchFoods('piz'); // Retorna um array contendo o objeto pizza
