@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap"
+			rel="stylesheet"
+		/>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/static/css/teste_pagina2.css">
+		<title>iFood</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="hero">
+				<!-- HEADER -->
+				<div class="header">
+					<ul>
+						<li><a href="">Entregador</a></li>
+						<li><a href="">Restaurante e mercado</a></li>
+						<li><a href="">Carreiras</a></li>
+						<li><a href="">iFood Card</a></li>
+				{% if login == False%}
+				<div class="login">
+					<ul>
+						<li><a href="">criar conta</a></li>
+						<li><a href="/cadastro">Entrar</a></li>
+					</ul>
+					</div>
+					</ul>
+				</div>
+				{% endif %}
+
+				{% if login == True%}
+
+				<div class="login">
+					<ul>
+						<div class="dropdown">
+							<button class="btn " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="#1A1A1A" xmlns="http://www.w3.org/2000/svg"><path d="M18.0938 12.8516C17.9688 12.6797 17.8047 12.5859 17.6016 12.5703C17.3984 12.5391 17.2109 12.5859 17.0391 12.7109C16.8828 12.8516 16.7891 13.0234 16.7578 13.2266C16.7422 13.4297 16.7969 13.6094 16.9219 13.7656C17.2812 14.2188 17.5547 14.7109 17.7422 15.2422C17.9297 15.7734 18.0234 16.3281 18.0234 16.9062V19.7422C18.0234 20.0859 17.8984 20.3828 17.6484 20.6328C17.4141 20.8672 17.125 20.9844 16.7812 20.9844H7.24219C6.89844 20.9844 6.60156 20.8672 6.35156 20.6328C6.11719 20.3828 6 20.0859 6 19.7422V16.9062C6 16.2188 6.13281 15.5625 6.39844 14.9375C6.66406 14.3281 7.02344 13.7969 7.47656 13.3438C7.92969 12.8906 8.46875 12.5312 9.09375 12.2656C9.70312 12 10.3516 11.8672 11.0391 11.8672H12C12.0156 11.8672 12.0234 11.8672 12.0234 11.8672C12.6641 11.8672 13.2656 11.7422 13.8281 11.4922C14.4062 11.2422 14.9062 10.9062 15.3281 10.4844C15.75 10.0625 16.0859 9.57031 16.3359 9.00781C16.5859 8.42969 16.7109 7.82031 16.7109 7.17969C16.7109 6.53906 16.5859 5.92969 16.3359 5.35156C16.0859 4.78906 15.75 4.29688 15.3281 3.875C14.9062 3.45312 14.4062 3.11719 13.8281 2.86719C13.2656 2.61719 12.6562 2.49219 12 2.49219C11.3594 2.49219 10.7578 2.61719 10.1953 2.86719C9.61719 3.11719 9.11719 3.45312 8.69531 3.875C8.27344 4.29688 7.9375 4.78906 7.6875 5.35156C7.45312 5.92969 7.33594 6.53906 7.33594 7.17969C7.33594 7.88281 7.48438 8.53906 7.78125 9.14844C8.07812 9.75781 8.46875 10.2812 8.95312 10.7188C8.3125 10.9375 7.71875 11.2422 7.17188 11.6328C6.625 12.0391 6.14844 12.5156 5.74219 13.0625C5.35156 13.5938 5.04688 14.1875 4.82812 14.8438C4.60938 15.5 4.5 16.1875 4.5 16.9062V19.7422C4.5 20.5078 4.76562 21.1562 5.29688 21.6875C5.84375 22.2188 6.49219 22.4844 7.24219 22.4844H16.7812C17.5469 22.4844 18.1953 22.2188 18.7266 21.6875C19.2578 21.1562 19.5234 20.5078 19.5234 19.7422V16.9062C19.5234 16.1719 19.3984 15.4531 19.1484 14.75C18.9141 14.0469 18.5625 13.4141 18.0938 12.8516ZM12 3.99219C12.875 3.99219 13.625 4.30469 14.25 4.92969C14.875 5.55469 15.1875 6.30469 15.1875 7.17969C15.1875 8.05469 14.875 8.80469 14.25 9.42969C13.625 10.0547 12.875 10.3672 12 10.3672H11.8594C11.0156 10.3203 10.2969 9.99219 9.70312 9.38281C9.125 8.75781 8.83594 8.02344 8.83594 7.17969C8.83594 6.30469 9.14062 5.55469 9.75 4.92969C10.375 4.30469 11.125 3.99219 12 3.99219Z"></path></svg>
+							</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<p class="m-0 p-2 font-weight-bold nome_cli">Olá, {{nome}}</p>
+								<a class="dropdown-item" href="/minha-conta/dados-cadastrais/"><span class="icon-marmita"><svg width="24px" height="24px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-240.000000, -528.000000)" fill="#3F3E3E" fill-rule="nonzero"><g id="Eu" transform="translate(48.000000, 458.000000)"><g id="icon-configuracoes" transform="translate(192.000000, 70.000000)"><path d="M26,7.10050506 C26,5.8954305 25.1045695,5 24,5 C22.8954305,5 22,5.8954305 22,7 C22,9.86192881 19.7614237,12.1005051 17,12.1005051 C15.6739176,12.1005051 14.402148,11.5737209 13.4644661,10.636039 C12.6123497,9.78392257 11.3460197,9.78392257 10.5649712,10.5649712 C9.78392257,11.3460197 9.78392257,12.6123497 10.5649712,13.3933983 C12.5886604,15.4170876 12.5886604,18.5829124 10.636039,20.5355339 C9.69835708,21.4732158 8.42658751,22 7.10050506,22 C5.8954305,22 5,22.8954305 5,24 C5,25.1045695 5.8954305,26 7,26 C9.86192881,26 12.1005051,28.2385763 12.1005051,31 C12.1005051,32.3260824 11.5737209,33.597852 10.636039,34.5355339 C9.78392257,35.3876503 9.78392257,36.6539803 10.5649712,37.4350288 C11.3460197,38.2160774 12.6123497,38.2160774 13.3933983,37.4350288 C15.4170876,35.4113396 18.5829124,35.4113396 20.5355339,37.363961 C21.4732158,38.3016429 22,39.5734125 22,40.8994949 C22,42.1045695 22.8954305,43 24,43 C25.1045695,43 26,42.1045695 26,41 C26,38.1380712 28.2385763,35.8994949 31,35.8994949 C32.3260824,35.8994949 33.597852,36.4262791 34.5355339,37.363961 C35.3876503,38.2160774 36.6539803,38.2160774 37.4350288,37.4350288 C38.2160774,36.6539803 38.2160774,35.3876503 37.4350288,34.6066017 C35.4113396,32.5829124 35.4113396,29.4170876 37.363961,27.4644661 C38.3016429,26.5267842 39.5734125,26 40.8994949,26 C42.1045695,26 43,25.1045695 43,24 C43,22.8954305 42.1045695,22 41,22 C38.1380712,22 35.8994949,19.7614237 35.8994949,17 C35.8994949,15.6739176 36.4262791,14.402148 37.363961,13.4644661 C38.2160774,12.6123497 38.2160774,11.3460197 37.4350288,10.5649712 C36.6539803,9.78392257 35.3876503,9.78392257 34.6066017,10.5649712 C32.5829124,12.5886604 29.4170876,12.5886604 27.4644661,10.636039 C26.5267842,9.69835708 26,8.42658751 26,7.10050506 Z M29.5857864,8.51471863 C30.366835,9.29576721 31.633165,9.29576721 32.4142136,8.51471863 C34.4379028,6.49102936 37.6037277,6.49102936 39.5563492,8.44365081 C41.5089706,10.3962723 41.5089706,13.5620972 39.5563492,15.5147186 C39.1102086,15.9608592 38.8994949,16.469567 38.8994949,17 C38.8994949,18.1045695 39.7949254,19 40.8994949,19 C43.7614237,19 46,21.2385763 46,24 C46,26.7614237 43.7614237,29 41,29 C40.369062,29 39.8603541,29.2107137 39.4852814,29.5857864 C38.7042328,30.366835 38.7042328,31.633165 39.4852814,32.4142136 C41.5089706,34.4379028 41.5089706,37.6037277 39.5563492,39.5563492 C37.6037277,41.5089706 34.4379028,41.5089706 32.4852814,39.5563492 C32.0391408,39.1102086 31.530433,38.8994949 31,38.8994949 C29.8954305,38.8994949 29,39.7949254 29,40.8994949 C29,43.7614237 26.7614237,46 24,46 C21.2385763,46 19,43.7614237 19,41 C19,40.369062 18.7892863,39.8603541 18.4142136,39.4852814 C17.633165,38.7042328 16.366835,38.7042328 15.5857864,39.4852814 C13.5620972,41.5089706 10.3962723,41.5089706 8.44365081,39.5563492 C6.49102936,37.6037277 6.49102936,34.4379028 8.44365081,32.4852814 C8.88979138,32.0391408 9.10050506,31.530433 9.10050506,31 C9.10050506,29.8954305 8.20507456,29 7.10050506,29 C4.23857625,29 2,26.7614237 2,24 C2,21.2385763 4.23857625,19 7,19 C7.63093804,19 8.13964587,18.7892863 8.51471863,18.4142136 C9.29576721,17.633165 9.29576721,16.366835 8.51471863,15.5857864 C6.49102936,13.5620972 6.49102936,10.3962723 8.44365081,8.44365081 C10.3962723,6.49102936 13.5620972,6.49102936 15.5147186,8.44365081 C15.9608592,8.88979138 16.469567,9.10050506 17,9.10050506 C18.1045695,9.10050506 19,8.20507456 19,7.10050506 C19,4.23857625 21.2385763,2 24,2 C26.7614237,2 29,4.23857625 29,7 C29,7.63093804 29.2107137,8.13964587 29.5857864,8.51471863 Z" id="Combined-Shape"></path><path d="M24,30 C27.3137085,30 30,27.3137085 30,24 C30,20.6862915 27.3137085,18 24,18 C20.6862915,18 18,20.6862915 18,24 C18,27.3137085 20.6862915,30 24,30 Z M24,33 C19.0294373,33 15,28.9705627 15,24 C15,19.0294373 19.0294373,15 24,15 C28.9705627,15 33,19.0294373 33,24 C33,28.9705627 28.9705627,33 24,33 Z" id="Oval-4"></path></g></g></g></g></svg></span> Meus dados</a>
+						      	<a class="dropdown-item" href="#"><span class="icon-marmita"><svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.25 17.8L12 19.8L15.75 17.8L18 19V4H6V19L8.25 17.8ZM15.75 19.5L18.7647 21.1078C19.0978 21.2855 19.5 21.0441 19.5 20.6667V3.5C19.5 2.94772 19.0523 2.5 18.5 2.5H5.5C4.94772 2.5 4.5 2.94771 4.5 3.5V20.6667C4.5 21.0441 4.90224 21.2855 5.23529 21.1078L8.25 19.5L11.7647 21.3745C11.9118 21.4529 12.0882 21.4529 12.2353 21.3745L15.75 19.5Z" fill="#3F3E3E"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7.85547 9.87947C7.85547 9.4224 8.22599 9.05188 8.68305 9.05188H15.1446C15.6017 9.05188 15.9722 9.4224 15.9722 9.87947C15.9722 10.3365 15.6017 10.7071 15.1446 10.7071H8.68305C8.22599 10.7071 7.85547 10.3365 7.85547 9.87947Z" fill="#3F3E3E"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7.85547 13.0375C7.85547 12.5805 8.22599 12.21 8.68305 12.21H15.1446C15.6017 12.21 15.9722 12.5805 15.9722 13.0375C15.9722 13.4946 15.6017 13.8651 15.1446 13.8651H8.68305C8.22599 13.8651 7.85547 13.4946 7.85547 13.0375Z" fill="#3F3E3E"></path></svg></span> Pedidos</a>
+							  	<a class="dropdown-item" href="#"><span class="icon-marmita"><svg width="24px" height="24px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-528.000000, -528.000000)"><g id="Entrar" transform="translate(528.000000, 528.000000)"><path d="M9.5,23 L27.5,23 C28.3284271,23 29,23.6715729 29,24.5 C29,25.3284271 28.3284271,26 27.5,26 L9.5,26 C8.67157288,26 8,25.3284271 8,24.5 C8,23.6715729 8.67157288,23 9.5,23 Z M17.5,3 L19,3 C19.8284271,3 20.5,3.67157288 20.5,4.5 C20.5,5.32842712 19.8284271,6 19,6 L17.5,6 C16.6715729,6 16,5.32842712 16,4.5 C16,3.67157288 16.6715729,3 17.5,3 Z M17.5,42 L19,42 C19.8284271,42 20.5,42.6715729 20.5,43.5 C20.5,44.3284271 19.8284271,45 19,45 L17.5,45 C16.6715729,45 16,44.3284271 16,43.5 C16,42.6715729 16.6715729,42 17.5,42 Z" id="Shape" fill="#3F3E3E" fill-rule="nonzero"></path><path d="M18.5,43.5 L33.46,43.5 C37.0498509,43.5 39.96,40.5898509 39.96,37 L39.96,11 C39.96,9.27609282 39.2751805,7.62279238 38.0561941,6.40380592 C36.8372076,5.18481946 35.1839072,4.5 33.46,4.5 L18.4916467,4.5" id="Shape" stroke="#3F3E3E" stroke-width="3"></path><polyline id="Shape" stroke="#3F3E3E" stroke-width="3" stroke-linecap="round" points="22 16 29 24.5 22 33"></polyline></g></g></g></svg></span> Sair</a>
+							</div>
+						</div>
+
+						<a href="" style="min-width: 30px;"><svg id="Flat" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+							<path d="M217.06543,146.8623l13.09082-72.00048A16.00086,16.00086,0,0,0,214.41406,56H46.67676L41.793,29.13818A15.9918,15.9918,0,0,0,26.05078,16H8A8,8,0,0,0,8,32H26.05078L52.75293,178.86182a16.0028,16.0028,0,0,0,1.187,3.76489A27.99341,27.99341,0,1,0,97.293,192H166.707A27.99678,27.99678,0,1,0,192,176H68.49512l-2.90918-16h135.7373A15.99184,15.99184,0,0,0,217.06543,146.8623ZM84,204a12,12,0,1,1-12-12A12.01343,12.01343,0,0,1,84,204Zm120,0a12,12,0,1,1-12-12A12.01343,12.01343,0,0,1,204,204ZM49.58594,72H214.41406l-13.09082,72H62.67676Z"/>
+						  </svg>
+						</a>
+					</ul>
+					</div>
+					</ul>
+				</div>
+
+				{% endif %}
+				
+
+
+				<!-- BG -->
+				<div class="bg">
+					<div class="left">
+						<img src="/static/img/dish-left.png" alt="" />
+						<img class="svg" src="/static/img/left.svg" alt="" />
+					</div>
+					<div class="right">
+						<img class="svg" src="/static/img/right.svg" alt="" />
+						<img src="/static/img/dish-right.png" alt="" />
+					</div>
+					<div class="content">
+						<img src="/static/img/logo.svg" alt="" class="logo" />
+						<h2>Faça mercado no iFood <span></span></h2>
+						<p>Entregamos tudo o que precisa na porta da sua casa, de hortifruti a itens de limpeza</p>
+						<div class="form">
+							<div class="search">
+								<img src="/static/img/search.svg" alt="" />
+								<input type="text" placeholder="Em qual endereço você está?" />
+							</div>
+							<button>Ver mercados próximos</button>
+						</div>
+						<div class="tags">
+							<span>Frios</span>
+							<span>Laticínios</span>
+							<span>Feira</span>
+							<span>Bebidas</span>
+							<span>Doces</span>
+							<span>Massas frescas</span>
+							<span>Limpeza</span>
+							<span>Padaria</span>
+							<span>Higiene</span>
+							<span>Congelados</span>
+							<span>Carnes</span>
+							<span>Cerveja</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="banner">
+				<img src="static/img/landing-banner-1.png" alt="" />
+				<img src="static/img/landing-banner-2.png" alt="" />
+			</div>
+			<div class="ifood">
+				<h3 class="footer__subtitle">iFood</h3>
+				<ul class="footer__links-list"><li class="footer__list-item"><a href="https://institucional.ifood.com.br?utm_source=site_ifood" target="_blank" class="footer__text-link" title="Site Institucional" rel="noopener noreferrer">Site Institucional</a></li><li class="footer__list-item"><a target="_blank" class="footer__text-link" title="Fale conosco" rel="noopener noreferrer" href="/ajuda">Fale conosco</a></li><li class="footer__list-item"><a href="https://carreiras.ifood.com.br/?utm_source=site_ifood" target="_blank" class="footer__text-link" title="Carreiras" rel="noopener noreferrer">Carreiras</a></li><li class="footer__list-item"><a href="https://entregador.ifood.com.br/" target="_blank" class="footer__text-link" title="Entregadores" rel="noopener noreferrer">Entregadores</a></li></ul>
+			</div>
+
+			<div class="Descubra">
+				<h3 class="footer__subtitle">Descubra</h3>
+				<ul class="footer__links-list"><li class="footer__list-item"><a href="https://parceiros.ifood.com.br/" target="_blank" class="footer__text-link" title="Cadastre seu Restaurante ou Mercado" rel="noopener noreferrer">Cadastre seu Restaurante ou Mercado</a></li><li class="footer__list-item"><a href="https://shop.ifood.com.br/?utm_source=Site_iFood&amp;utm_medium=Site_iFood&amp;utm_campaign=iFoodShop-Rodape" target="_blank" class="footer__text-link" title="iFood Shop" rel="noopener noreferrer">iFood Shop</a></li><li class="footer__list-item"><a href="https://contrate-beneficios.ifood.com.br/comprarifoodcard?utm_source=home_ifood&amp;utm_medium=referral&amp;utm_campaign=botao_header" target="_blank" class="footer__text-link" title="iFood Card" rel="noopener noreferrer">iFood Card</a></li><li class="footer__list-item"><a href="https://blog-empresas.ifood.com.br/?utm_source=home_ifood&amp;utm_medium=referral&amp;utm_campaign=botao_footer" target="_blank" class="footer__text-link" title="Blog iFood Empresas" rel="noopener noreferrer">Blog iFood Empresas</a></li></ul>
+			</div>
+
+			<div class="footer">
+				<img src="static/img/logofooter.svg" alt="" />
+				<span>© Copyright 2021 - iFood - Todos os direitos reservados iFood com Agência de Restaurantes Online S.A.
+
+					CNPJ 14.380.200/0001-21 / Avenida dos Autonomistas, nº 1496, Vila Yara, Osasco/SP - CEP 06.020-902</span>
+					<div class="footer__terms-links"><ul><li><a target="_blank" title="Termos e condições de uso" class="footer__text-link" href="/termos">Termos e condições de uso</a></li><li><a href="https://institucional.ifood.com.br/abrindo-a-cozinha/codigo-de-etica" target="_blank" class="footer__text-link" title="Código de conduta" rel="noopener noreferrer">Código de conduta</a></li><li><a href="https://institucional.ifood.com.br/abrindo-a-cozinha/declaracao-privacidade-clientes/" target="_blank" class="footer__text-link" title="Privacidade" rel="noopener noreferrer">Privacidade</a></li><li><a target="_blank" title="Dicas de segurança" class="footer__text-link" href="/seguranca">Dicas de segurança</a></li></ul></div>
+			</div>
+		</div>
+	</body>
+</html>

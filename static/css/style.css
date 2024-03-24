@@ -1,0 +1,321 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+}
+
+
+.ellipse-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65%; 
+    height: 100%; 
+    background-color: #f7e6e6; 
+    clip-path: ellipse(100% 110% at 0% 50%); 
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent; 
+    padding: 20px; 
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.ifood-logo {
+    width: 67px; 
+    height: auto; 
+}
+
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+}
+
+.svg-side{
+    min-width: 24%;
+    padding-right: 10%;
+}
+
+.registration-form {
+    width: 330px;
+    padding: 40px;
+    border: 1px #f4eded;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 4px 4px 4px #f8f6f6
+}
+
+.registration-form h2 {
+    margin-bottom: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 20px;
+}
+
+.registration-form h4 {
+    margin-bottom: 25px;
+    color: gray;
+    text-decoration: none;
+}
+
+.registration-form button.face,
+.registration-form button.google {
+    width: calc(100% - 10px);
+    padding: 10px 10px; 
+    text-align: center;    
+    border: 1px solid #9b9898;
+    border-radius: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.registration-form button.face {
+    background-color: #4065b4;
+    color: #ffffff;
+    border: 1px solid #9b9898; 
+    border-radius: none; 
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: .5s; 
+    
+}
+
+.registration-form button.face:hover{
+    background-color: #4065b4cb;
+    
+}
+
+.registration-form button.face i{
+    margin-right: 10px;
+}
+.registration-form button.google i{
+    margin-right: 10px;
+}
+
+.registration-form button.google {
+    background-color: #ffffff;
+    color: #010101;
+    border: 1px solid #9b9898; 
+    border-radius: none; 
+    cursor: pointer;
+    text-decoration: none;
+}
+
+h4 {
+    text-decoration: none;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: space-between; 
+
+}
+
+.registration-form button {
+    width: calc(50% - 5px); 
+    padding: 10px;
+    border: 2px rgb(147, 142, 142);
+    cursor: pointer;
+    background-color: #ffffff;
+}
+
+.button-container button{
+    border: 1px solid #9b9898; 
+    border-radius: none; 
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.button-container button:hover {
+    background-color: #ea1d2c;
+    color: #ffffff;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Dropdown feito com bootstrap e estilos própios, se vc leu até aqui parabens vc não usou chatgpt by:victor */
+
+.dropdown-menu a:hover{
+	color: red;
+	display: flex;
+}
+
+.dropdown-item{
+	display: flex;
+	justify-content: space-around;
+	justify-content: flex-start;
+	margin: 0px;
+	padding-left: 10px;
+}
+
+.icon-marmita{
+	margin-right: 20px;
+}
+
+.nome_cli{
+	font-size: 2em;
+	min-width: 8em;
+}
+
+.dropdown-menu.show{
+	max-width: 1000px;
+	max-height: 1000px;
+}
+
+
+/* Pagina de dados do cliente */
+
+/* Nav do victor */
+
+
+
+.nav_dados_clientes{
+    display: flex;
+    padding: 1%;
+    border-bottom:0.01em grey outset;
+    height: 80px;
+    align-items: center;
+
+}
+
+.nav_dados_clientes li{
+    font-size: 1em;
+    padding: 0% 1%;
+    height: 80%;
+    align-items: center;
+
+}
+
+.nav_dados_clientes ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    width: 90%;
+    align-items: center;
+
+}
+
+.nav_dados_clientes li a{
+    color: grey;
+}
+
+
+.nav_dados_clientes li a:hover{
+    color: red;
+    text-decoration: none;
+}
+
+
+.nav_dados_clientes button{
+    background-color: white;
+    border: none;
+}
+
+
+.nav_dados_clientes img{
+    max-width: 4%;
+}
+
+.liPesquisa{
+    min-width: 40vw;
+}
+
+.nav_pesquisa{
+    display: flex;
+    border: 1px solid black;
+    min-width: 100%;
+}
+
+.nav_pesquisa input{
+    min-width: 96%;
+    border: none;
+}
+
+
+
+
+
+/* botoes clientes */
+
+.container_dados_cliente{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dados_cliente{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1px;
+    margin-top: 50px;
+}
+
+.dados_cliente p{
+    all: unset;
+    display: flex;
+}
+
+.dados_cliente a{
+    margin: 5px 0px;
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: white;
+    font-size: 16px;
+    cursor: pointer;
+  
+}
+
+.dados_cliente button{
+    border: none;
+    background-color: white;
+    font-size: 16px;
+    cursor: pointer;
+    padding-left: 0;
+}
+
+/* pagina de mudança de nome e cpf do usuario */
+
+.mudar_nome_cpf{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.butt_mudar_nome_cpf{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+}
+
+.butt_reset_nome_cpf{
+    border: red 1px solid; 
+    margin: 1%;
+    background-color: white;
+    color: red;
+    border-radius: 5px;
+    
+}
+
+.butt_reset_nome_cpf:hover{
+    background-color: red;
+    color: white;   
+}
