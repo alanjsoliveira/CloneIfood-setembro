@@ -93,17 +93,17 @@
 
         <h2>Editar informações pessoais</h2>
 
-        <form id="form_mudar_nome_cpf" action="/mudar_nome_cpf" method="post" class="mudar_nome_cpf">
+        <form id="form_mudar_nome_cpf" action="/minha-conta/informacao-pessoais" method="post" class="mudar_nome_cpf" onsubmit="mudar()">
 
                
-                <input type="text" id="mundanca_nome" name="mundanca_nome" placeholder="Nome Completo" required>
+                <input type="text" id="mundanca_nome" name="mundanca_nome" placeholder="Nome Completo" required >
                 <input type="text" id="mundanca_cpf" name="mundanca_cpf" placeholder="CPF" required>
                 
                 <p>Confirme se os números de seu CPF estão corretos antes de confirmar a edição</p>
-
+            
                 <div class="butt_mudar_nome_cpf">
                     <button type="reset"  class="butt_reset_nome_cpf " >Voltar</button>
-                    <button type="submit" class="bg-danger rounded text-white" style="border: none; margin: 1%;">Salvar</button>
+                    <button type="submit" class="bg-danger rounded text-white" style="border: none; margin: 1%;"  >Salvar</button>
                 </div>
 
         </form>
@@ -111,6 +111,14 @@
    
         
     </div>
+
+    <script>
+            function mudar() {
+                alert("Nome e Cpf trocados!");
+                }
+
+               ;
+    </script>
 
 </body>
 </html>

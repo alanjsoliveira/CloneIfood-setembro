@@ -23,7 +23,7 @@ nome = None
 
 
 
-@app.route("/home", endpoint='home')
+@app.route("/home")
 def pagina_inicial():
     
     if Email is not False:
@@ -40,6 +40,9 @@ def pagina_inicial():
     return render_template('home.html', login = False)
 
 
+@app.route("/")
+def home():
+    return redirect('/home')
 
 
 @app.route("/cadastro")
@@ -141,7 +144,7 @@ def codigo_verificacao():
                 print(registro)
                 if len(registro) != 0:
                     cur.close()
-                    return redirect(url_for('home'))
+                    return redirect('/home')
 
                 return render_template('cadastro_celular.html')
             
@@ -196,10 +199,31 @@ def minha_conta():
     
     return render_template("Página_dados_cadastrais.html",login = True ,nome=nome, endereco = "teste")
 
-@app.route("/minha-conta/informacao-pessoais")
+@app.route("/minha-conta/informacao-pessoais", methods=['POST','GET'])
 def minha_conta_info_pessoal():
     if Email == False:
         return redirect(url_for('home'))
+    
+
+    if request.method == 'POST':
+        
+        nomeCli = request.form.get("mundanca_nome")
+        cpf = request.form.get("mundanca_cpf")
+        table = '"Usuario"'
+
+        cur = conn.cursor()
+                
+        cur.execute(f"UPDATE {table} SET nome='{nomeCli}', cpf='{cpf}' WHERE email={emailFinal};")
+
+
+        conn.commit()
+        cur.close()
+
+
+
+
+
+
     global nome
     return render_template("Pagina_dados_cadastrais_info_pessoal.html", nome=nome, login = True, endereco = 'teste')
 
