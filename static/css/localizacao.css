@@ -1,0 +1,64 @@
+:root {
+    --input-icon-size: 20px;
+    --button-padding: 20px 40px;
+    --button-width: 100%;
+    --max-width: 474px;
+    --border-color: rgb(168, 166, 166);
+    --hover-border-color: rgb(164, 155, 155);
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-localizacao-margin {
+    width: 90vh;
+    height: 60vh;
+}
+
+.container-localizacao {
+    text-align: center;
+    border: 0px solid var(--border-color);
+    padding: 60px;
+    box-shadow: 0px 0px 15px rgb(215, 91, 91);
+    transition: 0.50ms;
+}
+
+.container-localizacao:hover{
+    transform: scale(1.03);
+}
+
+.busca-end {
+    display: block;
+    margin: 0 auto 20px;
+    padding: 10px;
+    width: var(--button-width);
+    max-width: var(--max-width);
+}
+
+.btn-localiza {
+    display: block;
+    margin: 0 auto 20px;
+    padding: var(--button-padding);
+    width: var(--button-width);
+    max-width: var(--max-width);
+    background-color: rgb(245, 238, 238);
+    border: 0px;
+    cursor: pointer;
+    transition: transform 0.3s, border 0.3s;
+}
+
+.btn-localiza i {
+    margin-right: 30px;
+}
+
+.btn-localiza:hover {
+    transform: scale(1.02);
+    border: 1px solid var(--hover-border-color);
+    background-color: rgb(230, 39, 39);
+    color: aliceblue;
+}

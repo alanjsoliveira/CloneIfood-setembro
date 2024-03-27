@@ -7,10 +7,7 @@ body {
 	font-family: 'Raleway', Helvetica, sans-serif;
 	font-size: 16px;
 }
-.container {
-	width: 100%;
-	height: 100%;
-}
+
 .hero {
 	height: 80%;
 	max-height: 520px;
@@ -123,6 +120,39 @@ body {
 	width: 26px;
 	margin: 0 20px;
 }
+
+ul{
+	list-style: none;
+	text-decoration: none;
+	
+}
+.footer__text-link{
+	text-decoration-line: none;
+	font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.22;
+    color: #717171;
+    transition: color .15s cubic-bezier(.25,.46,.45,.94);
+}
+
+.Descubra{
+	width: 38%;
+	display: inline-block;
+}
+
+.ifood{
+	height: 18%;
+	width: 28%;
+	display: inline-block;
+}
+
+.container{
+	justify-content: space-between;
+	
+
+}
+
+
 .form .search input {
 	width: 100%;
 	background: transparent;
@@ -245,3 +275,4 @@ body {
     width: 24px; /* Largura do ícone - ajuste conforme necessário */
     height: 24px; /* Altura do ícone - ajuste conforme necessário */
 }
+

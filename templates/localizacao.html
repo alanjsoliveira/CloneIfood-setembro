@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/localizacao.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Fazer mercado no Ifood: Conheça os mercados com delivery</title>
+</head>
+<body>
+    <div class="container-localizacao-margin">
+        <div class="container-localizacao">
+            <img src="/static/img/icone-localiza.png" alt="">
+            <form action="/localizacao">
+                <h2>Onde você quer receber seu pedido?</h2>
+                <button class="btn-localiza" type="submit" onclick="return obterLocalizacao()">
+                    <i class="bi bi-crosshair"></i>
+                    <span>Usar minha localização</span>
+                </button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function obterLocalizacao() {
+            fetch('/localizacao', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.latitude && data.longitude) {
+                        console.log("Latitude:", data.latitude);
+                        console.log("Longitude:", data.longitude);
+                    } else {
+                        console.error("Não foi possível obter a localização atual.");
+                    }
+                })
+                .catch(error => console.error("Erro ao obter localização:", error));
+            
+            // Retorne false para evitar que o formulário seja enviado diretamente
+            return false;
+        }
+    </script>
+</body>
+</html>
