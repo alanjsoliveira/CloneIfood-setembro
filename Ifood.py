@@ -29,8 +29,8 @@ data_em_texto = '{}/{}/{}'.format(data_atual.day, data_atual.month,data_atual.ye
 app = Flask(__name__)
 CORS(app)
 
-account_sid = 'ACfdad7ceb98c745f03bf7eab36ef2419e'
-auth_token = 'a5b5506380e00a43e5e76a0e406d418c'
+account_sid = ''
+auth_token = ''
 client = Client(account_sid, auth_token)
 
 conn = pg.connect(database = "ifood", host = "localhost", user = "postgres", password = "1234")
