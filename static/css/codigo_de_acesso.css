@@ -64,3 +64,8 @@ cursor: pointer;
 align-items: center;
 margin-left: 95px;
 }
+
+.header img{
+    width: 150px;
+    height: auto;
+}

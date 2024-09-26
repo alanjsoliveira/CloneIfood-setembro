@@ -63,3 +63,8 @@ body {
 .form-group button:hover {
     background-color: #d60000;
 }
+
+.header img{
+    height: auto;
+    width: 150px;
+}

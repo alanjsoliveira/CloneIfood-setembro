@@ -1,0 +1,14 @@
+[
+    {
+        "Nome": "Mc Donalds",
+        "Foto": "static/img/Mcdonalds.png"
+    },
+    {
+        "Nome": "KFC",
+        "Foto": "static/img/Kfc.png"
+    },
+    {
+        "Nome": "Burger King",
+        "Foto": "static/img/BurguerKing.png"
+    }
+]

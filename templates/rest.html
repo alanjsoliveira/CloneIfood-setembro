@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="static/css/rest.css"/>
+    <link rel="stylesheet" href="static/css/favoritos.css"/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap"
+			rel="stylesheet"
+		/>
+		<title>iFood</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="hero">
+				<!-- HEADER -->
+				<div class="header">
+					<ul>
+						
+						<li><a href="">Início</a></li>
+						<li><a href="">Mercados</a></li>
+						<li><a href="">Restaurante</a></li>
+						
+						
+					
+					</ul>
+	
+					<div class="form">
+						<div class="search">
+							<img src="static/img/search.svg" alt="" />
+							<input type="text" placeholder="Buscar endereço e número" />
+						</div>
+					
+					</div>
+				</div>
+<!--Foto do estabelecimento-->
+<img src="static/img/FamiliaWinters.jpg" alt="Imagem do Estabelecimento" class="imagem-estica">
+<!-- Foto do restaurante-->
+<div class="restaurante-info">
+    <div class="imagem-redonda">
+        <img src={{foto}} alt="imagemdopersonagem">
+    </div>
+    <div class="info">
+        <h2>{{data}} 
+            <span class="estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <!-- Estrelas unicode -->
+            <span class="numero-avaliacao">(5)</span> <!-- Número de avaliações -->
+        </h2>
+        <button id="verMaisBtn">Ver mais</button>
+        <p id="maisInfo" style="display: none;">Aqui estão mais informações sobre o restaurante...</p>
+    </div>
+</div>
+<!--pesquisar cardapio-->
+<div class="pesquisa">
+  <input type="text" placeholder="Buscar no cardápio" class="campo-pesquisa">
+  <button type="submit" class="botao-pesquisa">
+      <img src="static/img/lupa.png" alt="Lupa">
+  </button>
+</div>
+				<!--Promoções-->
+			<div class="banner">
+				<img src="static/img/landing-banner-1.png" alt="" />
+				<img src="static/img/landing-banner-2.png" alt="" />
+				<img src="static/img/landing-banner-3.png" alt="" />
+			</div>
+
+
+<!--Produtos-->
+<h2>Produtos</h2>
+<section class="products">
+    <article class="product">
+        <img src="static/img/bebida1.jpg" alt="Bebida 1">
+        <h2>Bebida 1</h2>
+        <p>Descrição da bebida 1.</p>
+        <p>Preço: R$ 10,00</p>
+        <button href="/pizzaria">Adicionar ao Carrinho</button>
+    </article>
+    <article class="product">
+        <img src="static/img/bebida2.jpg" alt="Bebida 2">
+        <h2>Bebida 2</h2>
+        <p>Descrição da bebida 2.</p>
+        <p>Preço: R$ 8,00</p>
+        <button>Adicionar ao Carrinho</button>
+    </article>
+    <article class="product">
+        <img src="static/img/bebida3.jpg" alt="Bebida 3">
+        <h2>Bebida 3</h2>
+        <p>Descrição da bebida 3.</p>
+        <p>Preço: R$ 8,00</p>
+        <button>Adicionar ao Carrinho</button>
+    </article>
+    <article class="product">
+        <img src="bebida4.jpg" alt="Bebida 4">
+        <h2>Bebida 4</h2>
+        <p>Descrição da bebida 4.</p>
+        <p>Preço: R$ 8,00</p>
+        <button>Adicionar ao Carrinho</button>
+    </article>
+    <br><br><br>
+
+
+<!--novidade-->
+<div class="carousel-container">
+    <div class="carousel-row">
+      <div class="ifood">
+        <h3 class="footer__subtitle">iFood</h3>
+        <ul class="footer__links-list">
+          <li class="footer__list-item">
+            <a href="https://institucional.ifood.com.br?utm_source=site_ifood" target="_blank" class="footer__text-link" title="Site Institucional" rel="noopener noreferrer">Site Institucional</a>
+          </li>
+          <li class="footer__list-item">
+            <a target="_blank" class="footer__text-link" title="Fale conosco" rel="noopener noreferrer" href="/ajuda">Fale conosco</a>
+          </li>
+          <li class="footer__list-item">
+            <a href="https://carreiras.ifood.com.br/?utm_source=site_ifood" target="_blank" class="footer__text-link" title="Carreiras" rel="noopener noreferrer">Carreiras</a>
+          </li>
+          <li class="footer__list-item">
+            <a href="https://entregador.ifood.com.br/" target="_blank" class="footer__text-link" title="Entregadores" rel="noopener noreferrer">Entregadores</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="Descubra">
+        <h3 class="footer__subtitle">Descubra</h3>
+        <ul class="footer__links-list">
+          <li class="footer__list-item">
+            <a href="https://parceiros.ifood.com.br/" target="_blank" class="footer__text-link" title="Cadastre seu Restaurante ou Mercado" rel="noopener noreferrer">Cadastre seu Restaurante ou Mercado</a>
+          </li>
+          <li class="footer__list-item">
+            <a href="https://shop.ifood.com.br/?utm_source=Site_iFood&amp;utm_medium=Site_iFood&amp;utm_campaign=iFoodShop-Rodape" target="_blank" class="footer__text-link" title="iFood Shop" rel="noopener noreferrer">iFood Shop</a>
+          </li>
+          <li class="footer__list-item">
+            <a href="https://contrate-beneficios.ifood.com.br/comprarifoodcard?utm_source=home_ifood&amp;utm_medium=referral&amp;utm_campaign=botao_header" target="_blank" class="footer__text-link" title="iFood Card" rel="noopener noreferrer">iFood Card</a>
+          </li>
+          <li class="footer__list-item">
+            <a href="https://blog-empresas.ifood.com.br/?utm_source=home_ifood&amp;utm_medium=referral&amp;utm_campaign=botao_footer" target="_blank" class="footer__text-link" title="Blog iFood Empresas" rel="noopener noreferrer">Blog iFood Empresas</a>
+          </li>
+        </ul>
+      </div>
+      <h3 class="footer__subtitle">Social</h3>
+      <div class="redes-sociais">
+        <img src="static/img/Faceboock.png" alt="Faceboock">
+        <img src="static/img/Twitter.png" alt="Twitter">
+        <img src="static/img/Youtube.png" alt="YouTube">
+        <img src="static/img/Instagram.png" alt="Instagran">
+        <!-- Adicione mais imagens conforme necessário -->
+      </div>
+    </div>
+</div>
+
+
+
+<!--Footer-->
+<div class="footer">
+	<img src="static/img/logofooter.svg" alt="" />
+	<span>© Copyright 2024 - iFood <br />Todos os direitos reservados</span>
+	<div class="footer__terms-links">
+		<ul class="footer__links">
+			<li><a target="_blank" href="/termos" class="footer__text-link" title="Termos e condições de uso">Termos e condições de uso</a></li>
+			<li><a target="_blank" href="https://institucional.ifood.com.br/abrindo-a-cozinha/codigo-de-etica" class="footer__text-link" title="Código de conduta" rel="noopener noreferrer">Código de conduta</a></li>
+			<li><a target="_blank" href="https://institucional.ifood.com.br/abrindo-a-cozinha/declaracao-privacidade-clientes/" class="footer__text-link" title="Privacidade" rel="noopener noreferrer">Privacidade</a></li>
+			<li><a target="_blank" href="/seguranca" class="footer__text-link" title="Dicas de segurança">Dicas de segurança</a></li>
+		</ul>
+	</div>
+</div>
+</footer>
+</div>
+</div>
+<script src="static/js/rest.js"></script>
+</body>
+</html>
